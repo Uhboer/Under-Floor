@@ -1,6 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dxpkqxtxj7lh5"]
 
 [ext_resource type="PackedScene" uid="uid://do21kl4pkc3mn" path="res://scenes/character.tscn" id="1_2noi8"]
+[ext_resource type="PackedScene" uid="uid://c3yk3eu1swnnh" path="res://scenes/enemy.tscn" id="2_swytp"]
 [ext_resource type="Texture2D" uid="uid://joslf4o54ynt" path="res://textures/materials/Asset 6.png" id="1_4avuq"]
 [ext_resource type="Texture2D" uid="uid://bb03x3exg7n2c" path="res://textures/materials/Asset 9.png" id="3_spnl5"]
 
@@ -45,6 +46,9 @@ material = SubResource("StandardMaterial3D_grwbc")
 
 [node name="character" parent="." instance=ExtResource("1_2noi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99054, 1.01499, 1.88722)
+
+[node name="enemy" parent="." instance=ExtResource("2_swytp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870157, 0)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(-24.2744, 0, 0, 0, -0.0221564, 0, 0, 0, 0.247907, 0.0145, 3.98875, -12.0691)

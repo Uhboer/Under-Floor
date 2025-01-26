@@ -5,19 +5,14 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xeuo4"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dun5m"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7o486"]
 animations = [{
-"frames": [],
-"loop": false,
-"name": &"death",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_7bcrr")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -31,10 +26,7 @@ script = ExtResource("1_rh578")
 shape = SubResource("BoxShape3D_xeuo4")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-centered = false
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_dun5m")
-animation = &"walk"
-autoplay = "walk"
+sprite_frames = SubResource("SpriteFrames_7o486")
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]

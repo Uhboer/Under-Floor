@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://do21kl4pkc3mn"]
+[gd_scene load_steps=5 format=3 uid="uid://do21kl4pkc3mn"]
 
 [ext_resource type="Script" path="res://scenes/character.gd" id="1_kytp6"]
+[ext_resource type="Texture2D" uid="uid://1vkficu16bab" path="res://textures/P0NGA0.png" id="2_x0ybw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i8heu"]
 
@@ -20,3 +21,24 @@ shape = SubResource("CapsuleShape3D_81mhi")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592208, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Head"]
+
+[node name="hands" type="Control" parent="Head/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/CanvasLayer/hands"]
+position = Vector2(12, -530)
+scale = Vector2(5.71, 5.71)
+texture = ExtResource("2_x0ybw")

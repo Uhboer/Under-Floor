@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxpkqxtxj7lh5"]
+[gd_scene load_steps=11 format=3 uid="uid://dxpkqxtxj7lh5"]
 
 [ext_resource type="PackedScene" uid="uid://do21kl4pkc3mn" path="res://scenes/character.tscn" id="1_2noi8"]
-[ext_resource type="PackedScene" uid="uid://c3yk3eu1swnnh" path="res://scenes/enemy.tscn" id="2_swytp"]
 [ext_resource type="Texture2D" uid="uid://joslf4o54ynt" path="res://textures/materials/Asset 6.png" id="1_4avuq"]
+[ext_resource type="PackedScene" uid="uid://c3yk3eu1swnnh" path="res://scenes/enemy.tscn" id="2_swytp"]
 [ext_resource type="Texture2D" uid="uid://bb03x3exg7n2c" path="res://textures/materials/Asset 9.png" id="3_spnl5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wkf6a"]

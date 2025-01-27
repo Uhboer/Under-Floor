@@ -85,6 +85,6 @@ func _headbob(time) -> Vector3:
 	
 func take_damage(amount: int):
 	HP -= amount
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(3).timeout
 	if HP <= 0:
 		is_dead = true

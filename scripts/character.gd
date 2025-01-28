@@ -40,7 +40,7 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	if is_dead:
 		#TODO: remove this shit after making deathscreen
-		return
+		queue_free()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -97,7 +97,6 @@ func _headbob(time) -> Vector3:
 	
 func take_damage(amount: int):
 	HP -= amount
-	await get_tree().create_timer(3).timeout
 	if HP <= 0:
 		is_dead = true
 

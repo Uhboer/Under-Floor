@@ -20,8 +20,12 @@ const FOV_c = 5.0
 var is_dead = false
 var HP = 100.0
 
+var can_shoot = true
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+
+@onready var raycast_3d = $Head/RayCast3D
 
 
 func _ready():
@@ -75,6 +79,13 @@ func _physics_process(delta):
 	var tar_fov = FOV + FOV_c * vel_cl
 	camera.fov = lerp(camera.fov, tar_fov, delta * 8.0)
 		
+	
+	#shoot
+	
+	if Input.is_action_just_pressed("LCM"):
+		shoot()
+	
+	
 	move_and_slide()
 	debug()
 
@@ -89,6 +100,13 @@ func take_damage(amount: int):
 	await get_tree().create_timer(3).timeout
 	if HP <= 0:
 		is_dead = true
+
+func shoot():
+	if !can_shoot:
+		return
+	can_shoot = false
+	if raycast_3d.is_colliding() and raycast_3d.get_collider().has_method("kill"):
+		raycast_3d.get_collider().kill()
 
 func debug():
 	$Head/CanvasLayer/Label.text = str("hp - ", HP)

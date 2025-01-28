@@ -6,6 +6,7 @@ extends CharacterBody3D
 const MOVE_SPEED = 2.0
 const ATTACK_RANGE = 2.0
 const DAMAGE = 30.0
+var hp = 100.0
 
 var is_dead = false
 
@@ -48,3 +49,6 @@ func kill_player():
 		#$DeathSound.play()
 		#animated_sprite_3d.play("death")
 		#$CollisionShape3D.disabled = true
+
+func debug():
+	$Label3D.text = str("hp - ", hp)

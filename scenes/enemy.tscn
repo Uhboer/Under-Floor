@@ -30,3 +30,8 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_7o486")
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.809127, 0)
+billboard = 2
+text = "HP - 100"

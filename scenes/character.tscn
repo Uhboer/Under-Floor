@@ -42,3 +42,9 @@ size_flags_vertical = 8
 position = Vector2(12, -530)
 scale = Vector2(5.71, 5.71)
 texture = ExtResource("2_x0ybw")
+
+[node name="Label" type="Label" parent="Head/CanvasLayer"]
+offset_right = 650.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 101
+text = "hp - 100"

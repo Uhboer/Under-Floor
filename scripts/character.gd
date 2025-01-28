@@ -76,6 +76,7 @@ func _physics_process(delta):
 	camera.fov = lerp(camera.fov, tar_fov, delta * 8.0)
 		
 	move_and_slide()
+	debug()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -88,3 +89,6 @@ func take_damage(amount: int):
 	await get_tree().create_timer(3).timeout
 	if HP <= 0:
 		is_dead = true
+
+func debug():
+	$Head/CanvasLayer/Label.text = str("hp - ", HP)

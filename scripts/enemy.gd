@@ -22,18 +22,27 @@ func _physics_process(delta: float) -> void:
 		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-
 	
 	if is_retreat: 
-		global_position = global_position.lerp(retreat_target_position, MOVE_SPEED * 0.04)
-		if global_position.distance_to(retreat_target_position) < 0.1:
+		var dir = (retreat_target_position - global_position)
+		dir.y = 0.0
+		dir = dir.normalized()
+		velocity.x = dir.x * RETREAT
+		velocity.z = dir.z * RETREAT
+		move_and_slide()
+		
+		var horizontal_distance = Vector2(global_position.x - retreat_target_position.x, 
+									   global_position.z - retreat_target_position.z).length()
+		if horizontal_distance < 0.1:
 			is_retreat = false
+			velocity.x = 0
+			velocity.z = 0
 	else:
 		var dir = character.global_position - global_position
 		dir.y = 0.0
 		dir = dir.normalized()
-		velocity = dir * MOVE_SPEED
+		velocity.x = dir.x * MOVE_SPEED
+		velocity.z = dir.z * MOVE_SPEED
 		move_and_slide()
 		kill_player()
 	
@@ -52,7 +61,9 @@ func kill_player():
 		can_attack = true
 
 func retreat():
-	var retreat_dir = (global_position - character.global_position).normalized()
+	var retreat_dir = (global_position - character.global_position)
+	retreat_dir.y = 0.0
+	retreat_dir = retreat_dir.normalized()
 	retreat_target_position = global_position + retreat_dir * RETREAT
 	is_retreat = true
 	

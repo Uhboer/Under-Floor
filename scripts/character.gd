@@ -106,7 +106,7 @@ func shoot():
 		return
 	can_shoot = false
 	if raycast_3d.is_colliding() and raycast_3d.get_collider().has_method("kill"):
-		raycast_3d.get_collider().kill()
+		raycast_3d.get_collider().take_damage()
 
 func debug():
 	$Head/CanvasLayer/Label.text = str("hp - ", HP)
